@@ -1,0 +1,471 @@
+Quesion 1:
+String a = "hello"
+String b = new String("hello")
+
+a.equals(b); // .equals method will compare the data of the variable
+ 
+a==b; // == comparition operater will compare the memory of the variable
+Answer:
+OP 
+true
+false
+--------------------------------------
+Question 2:
+What is the output of below code?
+class A
+{
+   void m1()
+   {
+       System.out.println("In m1 A");
+   }
+}
+class B extends A
+{
+   void m1()
+   {
+       System.out.println("In m1 B");
+   }
+   void m2()
+   {
+       System.out.println("In m2 B");
+   }
+}
+public class Test {
+   public static void main(String[] args) {
+       A a=new B();
+       a.m2();
+   }
+}
+
+Answer:
+Output:
+Compaile error. becouse A class have only m1 method. here we call A referance object. 
+if we call like this B a = new B(). then m1 and m2 can callable like p.m1();p.m2(); becouse B inherit A.
+
+--------------------------------------
+Question 3:
+how can we call parent class methods Chiled class?
+
+Answer:
+using super class
+class A
+{
+   void m1()
+   {
+       System.out.println("In m1 A");
+   }
+}
+class B extends A
+{
+   void m1()
+   {
+       System.out.println("In m1 B");
+	super.m1;
+   }
+   void m2()
+   {
+       System.out.println("In m2 B");
+   }
+}
+public class Test {
+   public static void main(String[] args) {
+       A a=new B();
+	a.m1();
+       a.m2();
+   }
+}
+
+Output:
+In m1 B
+In m1 A
+in m2 B
+----------------------------------------------------
+Question 4:
+
+What is overloading and Overriding with example?
+
+Answer:
+Both are polymorphism concept
+
+Overloading - Static Binding / Compail time 
+public class TestClass(){
+	public void test(){
+
+ 
+
+	}
+	public void test(int){
+
+ 
+
+	}
+	public void test(int,String){
+
+ 
+
+	}
+	public void test(String,int){
+
+ 
+
+	}
+}
+example constroctors - same class name with different Argument 
+
+Overriding
+public class SecontTest extends TestClass(){
+	public void test(){
+
+ 
+
+	}
+	public void test(String,int ){
+
+ 
+
+	}
+}
+-----------------------------------------------------------------------
+Question 5:
+String[] words = { "java", "C++", "Java", "Python", "Tosca", "Selenium", "Python"} Write a java code to determine each word count in this Array of Strings.
+
+Answer:
+
+public class TestWord {
+        public static void main(String[] args) {
+            String[] words = { "java", "C++", "Java", "Python", "Tosca", "Selenium", "Python"};
+            HashMap<String,Integer> map = new HashMap<String,Integer>();
+            for(int i=0;i<words.length;i++){
+                int count=0;
+                for(int j=0;j<words.length;j++){
+                    if(words[i] == words[j]){
+                        count++;
+                        map.put(words[i],count);
+                        //System.out.println(words[i]);
+                    }
+                }
+            }
+            System.out.println(map);
+        }
+---------------------------------------------------------------------------
+Question 6: Create Hashmap and find city from searching words?
+cities: { 
+"Amsterdam" => "Amsterdam’s intriguing history spans seven centuries. From humble beginnings as a small village to a world power in the 17th century, Amsterdam today is a fascinating mix of history and commerce.",
+
+ 
+
+"Shanghai" => "Shanghai, on China’s central coast, is the country's biggest city and a global financial hub.",
+
+ 
+
+"Seattle" => "Seattle is surrounded by water, mountains and evergreen forests, and contains thousands of acres of parkland.",
+
+ 
+
+"Singapore" => "Singapore, an island city-state off southern Malaysia, is a global financial center with a tropical climate and multicultural population."
+}
+
+search("history")    :  [ Amsterdam ]
+search("financial hub.") : [ Shanghai ]
+
+
+Pseudo code:
+Find the Key if value contain given String 
+HashMap map = {"Amsterdam":"Amsterdam’s intriguing history spans seven centuries. From humble beginnings as a small village to a world power in the 17th century, Amsterdam today is a fascinating mix of history and commerce.";"Shanghai":"Shanghai, on China’s central coast, is the country's biggest city and a global financial hub."}
+
+map.put("");
+
+for(Map.Enter<String,String> res:map.entrySet()){
+	if(res.getValue().contains("history")){
+	Sysout(res.getKey);
+}
+}
+}
+Anothe way using Streams:
+Optional<String> res = ma.entrySet().stream().filter(p -> p.getValue().contains("water")).map(HashMap.Entry::getKey).findFirst();
+System.out.println(res);
+-------------------------------------------------------------------------------------------
+Question 7: What is Serialization and Deserialization in Rest Assure?
+
+serializarion - Converting an object into stream of bytes. 
+deserialization - rebuild the object from stream of bytes.
+
+-------------------------------------------------------------------------------------------
+Question 8: What is stale exception and how can you handle it?
+stale element exception - This exception occurs when an element that was previously located on the page is no longer available
+
+usring try catch to handle:
+try{
+	WebElement element = driver.findElement(By.id("myElement"));
+  	element.click();
+} catch (StaleElementReferenceException e) {
+  	// Refresh the page
+  	driver.navigate().refresh();
+
+	// Try to locate the element again
+  	element = driver.findElement(By.id("myElement"));
+	element.click();
+}
+
+-------------------------------------------------------------------------------------------
+Question 9. What does the Mandatory validation need to do in API testing?
+Status code
+Header
+Cookies
+Response time
+Response body
+Schema validation
+-------------------------------------------------------------------------------------------
+Question 10.What fields are needed to be filled in postman for testing API.
+Request Method, Parameted or headers the API requires, Body except get
+-------------------------------------------------------------------------------------------
+Question 11.What is response code?
+HTTP respomce code - Response status codes serve as a quick and concise means of communicating how the server handle the client request 
+100 to 199 -> information
+	100 -> information received without any problem
+200 to 299 -> Success message
+	200 -> Ok
+	201 -> Created success 
+	204 -> request received and understood but no need to send any data 
+	205 -> Form needs to reset may be session might be lost
+300 to 399 -> Redirection 
+	300 -> Multiple response receive 
+	301 -> moved permanently 
+	304 -> Not modified 
+	307 -> Temporary Redirect
+400 to 499 -> Client Error
+	400 -> Bad Request 
+	401 -> Unauthorized
+	402 -> Payment required 
+	403 -> forbidden – client cannot be able to access the requested resource.
+	404 -> not found 
+	408 -> request timeout
+	410 -> Gone – permanently gone
+	415 -> unsupported media type
+500 to 599 -> server error
+	500 -> Internet server error
+	501 -> Not Implemented 
+	502 -> Bad Gateway
+	503 -> Server Unavailable 
+	504 -> Gateway timeout
+
+-------------------------------------------------------------------------------------------
+
+Question 12.What is difference between query parameters and path parameters.
+The first difference between query and path parameters is their position in the URL. While the query parameters appear on the right side of the ‘?’ in the URL, path parameters come before the question mark sign.
+Secondly, the query parameters are used to sort/filter resources. On the other hand, path parameters are used to identify a specific resource or resources.
+Example: syntac - > path parameter ? query parametes 
+/surfreport/beachId?days=3&units=metric&time=1400
+-------------------------------------------------------------------------------------------
+
+Question 13.What is a static keyword?
+//Accessing Member and Methods -> static method can only accesable other static method not accessed by non static method
+// Calling method the memory of static method is fixed so we dont need to create object of a class  -> Calculation cl = new Calculation();
+//Binding Process static method is use compile time or early binding we can access the static method without creating an instance  but non-static method is runtime or dynamic binding. So that we cannot access a non-static method without creating an instance.
+//Overriding we cannot override a static method, because of early binding.
+//Memory allocation In the static method, memory allocation happens only once
+
+-------------------------------------------------------------------------------------------
+
+Question 14.Showed a program of static and non-static methods and asked the output.
+Example:
+public class Helper {
+        public static int sum(int a, int b){
+            return a+b;
+        }
+        public int Add(int a, int b){
+             return a+b;
+        }
+}
+
+public class Calculation extends Helper{
+   
+    //overriding - throght compile error
+    public int sum(int a, int b){
+        int a = 0;
+        return a;
+    }
+
+    public static void main(String args[]){
+        int n = 4, m = 7;
+        int s = Helper.sum(n,m);
+       // int p = Helper.Add(n,m); -> not possible because Add is non-static method
+        Calculation cl = new Calculation();
+        int p = cl.Add(n,m);
+        int q = cl.sum(n,m);
+        System.out.println(s);
+        System.out.println(p);
+        System.out.println(q);
+    }
+
+}
+
+-------------------------------------------------------------------------------------------
+
+Question 14. What is inheritance?
+Inheritance is the mechanisum where the suber/child class inherit the properties and charachteristic of the super/parent class.It also supports additional features of extracting properties from the child class and using it into other derived classes.
+-------------------------------------------------------------------------------------------
+
+Question 15. Showed a program of inheritance and asked the output.
+class Parent{
+    public void m1() {
+    	System.out.println("Parent");
+    }
+}
+
+class Child extends Parent {
+
+ 
+
+    public void m2() {
+	    System.out.println("Child");
+    }
+}
+
+class Test{
+    public static void main(String[] args){
+        Parent p = new Parent();
+        p.m1();
+        p.m2();
+        Child c= new Child();
+        c.m1();
+        c.m2();
+    }
+}
+-------------------------------------------------------------------------------------------
+Question 16. Static context?
+
+class parent{
+Static int a = 5;
+public void method()
+{Sysout( a++) }
+
+Class child extends parent
+{
+Parent p1 = new Parent();
+Parent p2 = new Parent();
+p1.method();
+p1.method();
+p2.method();
+p2.method();
+
+}
+-------------------------------------------------------------------------------------------
+Question 17. Hashmap can have null value ? 
+Hashmap will allow one null. Actualy its not a null hashmap will take it as 0 bucket. again we put null it accept but not print.
+Example:
+    HashMap<Integer,String> m1 = new HashMap<>();
+        m1.put(0,"");
+        m1.put(4,"");
+        m1.put(3,"s");
+        m1.put(1,"z");
+        m1.put(0,"");
+
+        System.out.println(m1);
+Op:
+{0=, 1=z, 3=s, 4=}
+-------------------------------------------------------------------------------------------
+Question 18. how to itrate hashmap?
+
+  HashMap<Integer,String> m1 = new HashMap<>();
+        m1.put(0,"");
+        m1.put(4,"");
+        m1.put(3,"s");
+        m1.put(1,"z");
+        m1.put(0,"");
+
+        System.out.println(m1);
+        //keyset
+        for(Integer key : m1.keySet()){
+            System.out.println(key+"---------"+m1.get(key));
+        }
+        //entryset
+        for(Map.Entry<Integer,String> e : m1.entrySet()){
+            System.out.println(e.getKey());
+            System.out.println(e.getValue());
+        }
+        //entryset with stream
+        m1.entrySet().stream().forEach(p->System.out.println(p.getKey()+"------"+p.getValue()));
+
+-------------------------------------------------------------------------------------------
+Question 19. what library we need to iterateing hashmap?
+
+-------------------------------------------------------------------------------------------
+Question 20. what library we need ti iterate jsonobject?
+
+-------------------------------------------------------------------------------------------
+Question 21.How to give authontication in api manual(postman) and automation?
+in rest asure we have a method call auth()
+in postman we have tab authorization with username and password
+-------------------------------------------------------------------------------------------
+Quetion 22.What is the different of responce validation and schema validation?
+reponce validation will validate the data come in responce
+schema validarion is what type of data will be return 
+-------------------------------------------------------------------------------------------
+Question 23.What type of authentication rest Assure support?
+Basic
+.auth().basic("username","password")
+Digest
+.auth().digest("username","password")
+preemptive
+.auth().preemptive.basic("username","password")
+bearer token
+in postman in authentication select bearer token and give the token
+in rest assure .header("Authorization","Bearer token") or store token in to a variable like string token = "sdfsjkdfhiajwe"; inside given methon .header("Authorization","bearer "+token)
+oauth1.0
+.auth().oauth("cunsumerKey","cunsumerSecrate","accessToken","tokenSecrate")
+oauth 2.0
+.auth().oauth2("token")
+API Key
+.queryParam("appid","key") // appid id APIKey
+-------------------------------------------------------------------------------------------
+Question 24.How you will differentiate and pass it in Rest Assure?
+example api = https://api.openweathermap.org/data/2.5/forecast/daily?p=chenni&unit=metric&cnt=7
+
+given()
+.queryParam("appid","key")
+.pathParam("mypath","data/2.5/forecast/daily")
+.queryParam("p","chennai")
+.queryParam("unit","metric")
+.queryParam("cnt","7")
+.when()
+get("https://api.openweathermap.org/{mypath}")
+.then()
+.statuscode(200)
+.log().all();
+
+-------------------------------------------------------------------------------------------
+25.What is the keyword to user regular expression in selenium? 
+My Ans: replace([^a-z])
+-------------------------------------------------------------------------------------------
+26.How to retrieve text in alert without user alert?
+My Ans: we have an alert class with getText() to get the text
+-------------------------------------------------------------------------------------------
+27.How to automate captcha in selenium?
+My Ans: As per my knowledge we cannot automate captcha
+-------------------------------------------------------------------------------------------
+28.How to enable textbox using selenium?
+My Ans: using JavaScript method like find webelement and write JavaScript to enable
+-------------------------------------------------------------------------------------------
+29.How to screenshot in selenium?
+My Ans: 
+	full page - driver.getScreenshortAs()
+	Particular WebElement - Webelement.getScreenshortAs()
+-------------------------------------------------------------------------------------------
+30.How will fetch xpath from the property files? 
+My Ans: Configure property and use the property key in java class
+-------------------------------------------------------------------------------------------
+31.We have 3 test case for three website 3 java file how you will exeute paralally? 
+My Ans:  in testng.xml file set parallel="test" or thread
+-------------------------------------------------------------------------------------------
+
+
+EntrySet 
+Lamda 
+Association 
+
+XML lib
+github action
+Jacksonlib 
+
+Collection concept
