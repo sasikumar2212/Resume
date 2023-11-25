@@ -467,5 +467,11 @@ Association
 XML lib
 github action
 Jacksonlib 
-
+interview on 25/11/2023 - infosys
+1.Explain and example for the @annotations in testng
+2.how to convert testng report to exccel or csv format 
+3.have 5 module like login, home ,product1,product2,product3 pages how to execute paralally mode 
+parallal="clases" test tag in testng.xml 
+4.have 3 web aplication how to run paralally 
+parallal="tests" in suite tag in testng.xml
 Collection concept
