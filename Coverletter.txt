@@ -1,0 +1,19 @@
+[Your Name] [Your Address] [City, State, Zip Code] [Your Email Address] [Your Phone Number] [Date]
+
+[Hiring Manager's Name] [Company Name] [Company Address] [City, State, Zip Code]
+
+Dear [Hiring Manager's Name],
+
+I am writing to express my interest in the Data School Junior Analyst position at [Company Name], as advertised. With a strong background in data analysis and a passion for leveraging data-driven insights to inform decision-making, I am excited about the opportunity to contribute to your team and support your company's objectives.
+
+As a recent graduate with a degree in [relevant field], I have acquired a solid foundation in statistical analysis, data visualization, and machine learning techniques. My academic coursework, combined with practical experience gained through internships and projects, has equipped me with the skills necessary to excel in a dynamic and fast-paced environment.
+
+During my previous role as a [mention relevant position or experience], I had the opportunity to [highlight a specific accomplishment or project related to data analysis]. This experience not only honed my technical abilities but also enhanced my ability to communicate complex findings to stakeholders in a clear and concise manner.
+
+I am particularly drawn to [Company Name] because of its reputation for [mention something specific about the company or its projects that align with your interests or values]. I am eager to contribute my expertise to your team and collaborate with colleagues to drive actionable insights that drive business growth.
+
+Thank you for considering my application. I am enthusiastic about the opportunity to discuss how my skills and experiences align with the needs of [Company Name]. I am available for an interview at your earliest convenience and can be reached at [Your Phone Number] or via email at [Your Email Address].
+
+Thank you for your time and consideration.
+
+Sincerely, [Your Name]
